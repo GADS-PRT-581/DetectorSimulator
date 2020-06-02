@@ -14,6 +14,7 @@ namespace IBFNS_Detector_Simulator
     public partial class IBFNS_Detector_Simulator : Form
     {
         int RxData;
+        int Number;
         int Connection = 0;
         int ModbusAddress = 0x03; // Fix modbus Address
         int ModbusFunction = 0x04; // Fix modbus function
@@ -122,6 +123,7 @@ namespace IBFNS_Detector_Simulator
                 buttonSendAlarm.BackColor = Color.Green;
                 buttonSendAlarm.ForeColor = Color.White;
                 AlarmStatus = 0x0A;
+                textTemperature.Text = "50";
                 richTextBox_Report.Text += Environment.NewLine + "Alarm Sent.";
             }
             else
@@ -130,6 +132,7 @@ namespace IBFNS_Detector_Simulator
                 buttonSendAlarm.BackColor = Color.White;
                 buttonSendAlarm.ForeColor = Color.Black;
                 AlarmStatus = 0x0B;
+                textTemperature.Text = "10";
             }
         }
 
@@ -137,25 +140,56 @@ namespace IBFNS_Detector_Simulator
         {
             if (Connection == 1)
             {
-                DeviceAdress = int.Parse(textDeviceAddress.Text);
-                AlarmThreshold = int.Parse(textBoxAlarmThr.Text);
-                Temperature = int.Parse(textTemperature.Text);
-                Smokelvl = int.Parse(textSmokeLevel.Text);
-                if(Temperature> AlarmThreshold)
+                bool success = Int32.TryParse(textDeviceAddress.Text, out Number);
+                if (success)
+                {
+                    DeviceAdress = Number;
+                }
+                success = Int32.TryParse(textBoxAlarmThr.Text, out Number);
+                if (success)
+                {
+                    AlarmThreshold = Number;
+                }
+                success = Int32.TryParse(textTemperature.Text, out Number);
+                if (success)
+                {
+                    Temperature = Number;
+                }
+                success = Int32.TryParse(textSmokeLevel.Text, out Number);
+                if (success)
+                {
+                    Smokelvl = Number;
+                }
+
+                if ((DeviceType==1) && (Temperature> AlarmThreshold))
                 {
                     buttonSendAlarm.Text = "ALARM";
                     buttonSendAlarm.BackColor = Color.Green;
                     buttonSendAlarm.ForeColor = Color.White;
                     AlarmStatus = 0x0A;
                 }
-                else
+                else if ((DeviceType == 1) && (Temperature <= AlarmThreshold))
                 {
                     buttonSendAlarm.Text = "Send Alarm";
                     buttonSendAlarm.BackColor = Color.White;
                     buttonSendAlarm.ForeColor = Color.Black;
                     AlarmStatus = 0x0B;
                 }
-                    
+                if ((DeviceType == 2) && (Smokelvl > AlarmThreshold))
+                {
+                    buttonSendAlarm.Text = "ALARM";
+                    buttonSendAlarm.BackColor = Color.Green;
+                    buttonSendAlarm.ForeColor = Color.White;
+                    AlarmStatus = 0x0A;
+                }
+                else if ((DeviceType == 2) && (Smokelvl <= AlarmThreshold))
+                {
+                    buttonSendAlarm.Text = "Send Alarm";
+                    buttonSendAlarm.BackColor = Color.White;
+                    buttonSendAlarm.ForeColor = Color.Black;
+                    AlarmStatus = 0x0B;
+                }
+
                 if (RxData == (byte)DeviceAdress)
                 {
 
@@ -190,6 +224,8 @@ namespace IBFNS_Detector_Simulator
                     buttonSendAlarm.BackColor = Color.White;
                     buttonSendAlarm.ForeColor = Color.Black;
                     AlarmStatus = 0x0B;
+                    textTemperature.Text = "10";
+                    textSmokeLevel.Text = "10";
                     richTextBox_Report.Text += Environment.NewLine + "System Reset Received.";
                 }
             }

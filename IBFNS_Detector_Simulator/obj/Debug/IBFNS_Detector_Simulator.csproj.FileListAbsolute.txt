@@ -8,3 +8,13 @@ C:\Users\G4NTZ\source\repos\IBFNS_Detector_Simulator\IBFNS_Detector_Simulator\ob
 C:\Users\G4NTZ\source\repos\IBFNS_Detector_Simulator\IBFNS_Detector_Simulator\obj\Debug\IBFNS_Detector_Simulator.csproj.CoreCompileInputs.cache
 C:\Users\G4NTZ\source\repos\IBFNS_Detector_Simulator\IBFNS_Detector_Simulator\obj\Debug\IBFNS_Detector_Simulator.exe
 C:\Users\G4NTZ\source\repos\IBFNS_Detector_Simulator\IBFNS_Detector_Simulator\obj\Debug\IBFNS_Detector_Simulator.pdb
+C:\Users\G4NTZ\Documents\GitHub\DetectorSimulator\IBFNS_Detector_Simulator\bin\Debug\IBFNS_Detector_Simulator.exe.config
+C:\Users\G4NTZ\Documents\GitHub\DetectorSimulator\IBFNS_Detector_Simulator\bin\Debug\IBFNS_Detector_Simulator.exe
+C:\Users\G4NTZ\Documents\GitHub\DetectorSimulator\IBFNS_Detector_Simulator\bin\Debug\IBFNS_Detector_Simulator.pdb
+C:\Users\G4NTZ\Documents\GitHub\DetectorSimulator\IBFNS_Detector_Simulator\obj\Debug\IBFNS_Detector_Simulator.csprojAssemblyReference.cache
+C:\Users\G4NTZ\Documents\GitHub\DetectorSimulator\IBFNS_Detector_Simulator\obj\Debug\IBFNS_Detector_Simulator.IBFNS_Detector_Simulator.resources
+C:\Users\G4NTZ\Documents\GitHub\DetectorSimulator\IBFNS_Detector_Simulator\obj\Debug\IBFNS_Detector_Simulator.Properties.Resources.resources
+C:\Users\G4NTZ\Documents\GitHub\DetectorSimulator\IBFNS_Detector_Simulator\obj\Debug\IBFNS_Detector_Simulator.csproj.GenerateResource.cache
+C:\Users\G4NTZ\Documents\GitHub\DetectorSimulator\IBFNS_Detector_Simulator\obj\Debug\IBFNS_Detector_Simulator.csproj.CoreCompileInputs.cache
+C:\Users\G4NTZ\Documents\GitHub\DetectorSimulator\IBFNS_Detector_Simulator\obj\Debug\IBFNS_Detector_Simulator.exe
+C:\Users\G4NTZ\Documents\GitHub\DetectorSimulator\IBFNS_Detector_Simulator\obj\Debug\IBFNS_Detector_Simulator.pdb
